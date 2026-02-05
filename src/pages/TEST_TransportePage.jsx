@@ -1,7 +1,3 @@
-// TEST_TransportePage.jsx
-// =======================
-// Componente de prueba standalone para testear TransportePage sin integrar en tu proyecto
-
 import React from 'react';
 import TransportePage from './TransportePage';
 import './index.css'; // Asegúrate de que apunte a tu Tailwind CSS

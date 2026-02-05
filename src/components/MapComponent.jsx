@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import L from 'leaflet';
 
-// Fix para los iconos de Leaflet en React
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -9,7 +8,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
-// Iconos personalizados por tipo
+
 const createCustomIcon = (type, color) => {
   return L.divIcon({
     className: 'custom-marker',
@@ -83,15 +82,14 @@ export default function MapComponent({ data, filters, onMarkerClick }) {
     };
   }, []);
 
-  // Actualizar marcadores cuando cambian los datos o filtros
+  
   useEffect(() => {
     if (!mapInstanceRef.current || !data) return;
 
-    // Limpiar marcadores anteriores
     markersRef.current.forEach(marker => marker.remove());
     markersRef.current = [];
 
-    // Filtrar datos según filtros activos
+    
     let filteredData = data;
     
     if (filters.types.length > 0) {
@@ -112,7 +110,7 @@ export default function MapComponent({ data, filters, onMarkerClick }) {
       );
     }
 
-    // Crear marcadores
+   
     const bounds = [];
     
     filteredData.forEach(item => {
@@ -147,7 +145,7 @@ export default function MapComponent({ data, filters, onMarkerClick }) {
       bounds.push([item.lat, item.lng]);
     });
 
-    // Ajustar vista para mostrar todos los marcadores
+ 
     if (bounds.length > 0) {
       mapInstanceRef.current.fitBounds(bounds, { padding: [50, 50] });
     }

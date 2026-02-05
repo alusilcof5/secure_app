@@ -3,9 +3,8 @@
  */
 
 export const parseCSVAdvanced = (text) => {
-  // Eliminar BOM si existe
   text = text.replace(/^\ufeff/, '');
-  
+
   const lines = text.split(/\r?\n/).filter(line => line.trim());
   if (lines.length === 0) return [];
   

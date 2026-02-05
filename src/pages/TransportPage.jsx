@@ -4,10 +4,6 @@ import MetroTransportPage from './MetroTransportPage';
 import BicingTransportPage from './BicingTransportPage';
 import StopsStationsPage from './StopsStationsPage';
 
-/**
- * Página principal de Transporte con navegación por pestañas
- * Incluye 4 subpáginas especializadas con API REAL de TMB
- */
 export default function TransportePage() {
   const [activeTab, setActiveTab] = useState('bus');
 

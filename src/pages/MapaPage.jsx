@@ -15,15 +15,13 @@ export default function MapaPage() {
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [stats, setStats] = useState(null);
 
-  // Cargar datos al montar el componente
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         const allData = await loadAllData();
         setData(allData);
-        
-        // Calcular estadísticas
+      
         const newStats = {
           cultural: allData.cultural.length,
           restaurant: allData.restaurants.length,
@@ -43,7 +41,7 @@ export default function MapaPage() {
     fetchData();
   }, []);
 
-  // Filtrar datos según filtros activos
+
   const getFilteredData = () => {
     if (!data) return [];
     
