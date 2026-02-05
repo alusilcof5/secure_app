@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-900 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 inline-block text-center;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary-600 border-2 border-primary-200 hover:border-primary-300 hover:bg-primary-50;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all;
+  }
+  
+  .select-input {
+    @apply input-field appearance-none bg-white cursor-pointer;
+  }
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Leaflet map customization */
+.leaflet-container {
+  @apply rounded-xl;
+}
