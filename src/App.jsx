@@ -3,8 +3,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import MapaPage from './pages/MapaPage';
-import { AnalisisPage, SimuladorPage, DatosPage } from './pages/OtherPages';
+import { DatosPage } from './pages/OtherPages';
 import TransportePage from './pages/TransportePage';
+import SimulatorPage from './pages/SimulatorPage';
 
 function App() {
   const [activePage, setActivePage] = useState('inicio');
@@ -18,9 +19,11 @@ function App() {
       case 'analisis':
         return <TransportePage />;
       case 'simulador':
-        return <SimuladorPage />;
+        return <SimulatorPage />;
       case 'datos':
         return <DatosPage />;
+      case 'seguridad':
+        return <SeguridadPage />;
       default:
         return <HomePage setActivePage={setActivePage} />;
     }
