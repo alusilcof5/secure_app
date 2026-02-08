@@ -6,6 +6,10 @@ import MapaPage from './pages/MapaPage';
 import { DatosPage } from './pages/OtherPages';
 import TransportePage from './pages/TransportePage';
 import SimulatorPage from './pages/SimulatorPage';
+import SafetyEvaluationPage from './pages/SafetyEvaluationPage';
+import CommunityNetworkPage from './pages/CommunityNetworkPage';
+import PersonalAnalysisPage from './pages/PersonalAnalysisPage';
+import SafeRoutesPage from './pages/SafeRoutesPage';
 
 function App() {
   const [activePage, setActivePage] = useState('inicio');
@@ -16,14 +20,20 @@ function App() {
         return <HomePage setActivePage={setActivePage} />;
       case 'mapa':
         return <MapaPage />;
-      case 'analisis':
+      case 'transporte':
         return <TransportePage />;
+      case 'evaluacion':
+        return <SafetyEvaluationPage />;
       case 'simulador':
         return <SimulatorPage />;
+      case 'comunidad':
+        return <CommunityNetworkPage />;
+      case 'rutas':
+        return <SafeRoutesPage />;
+      case 'analisis':
+        return <PersonalAnalysisPage />;
       case 'datos':
         return <DatosPage />;
-      case 'seguridad':
-        return <SeguridadPage />;
       default:
         return <HomePage setActivePage={setActivePage} />;
     }
